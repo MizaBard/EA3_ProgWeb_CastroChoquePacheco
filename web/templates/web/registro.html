@@ -52,7 +52,7 @@
 
     <!-- Inicio Formulario-->
     <form class="container" action="{% url 'registro' %}" method="post" 
-        action="#" id="registrationForm"> {% csrf_token %}
+        id="registrationForm"> {% csrf_token %}
         <br>
         <div class="title"><h2>Formulario de Registro</h2></div>
         <br>
@@ -60,7 +60,14 @@
         <br>
         <div class="container_box">
             
-            <label for="nombretxt">Nombre:</label><br>
+            <label for="rut">Rut:</label><br>
+            <input type="text" id="rut" name="rut" ><br><br>
+
+        </div>
+        <br>
+        <div class="container_box">
+            
+            <label for="nombre">Nombre:</label><br>
             <input type="text" id="nombre" name="nombre" ><br><br>
 
         </div>
