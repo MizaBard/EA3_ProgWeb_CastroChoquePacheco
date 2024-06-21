@@ -21,11 +21,12 @@ def registro(request):
         context={ 'usuario' : usuario }
         return render(request, 'web/registro.html') 
     else: 
+        rut=request.post["rut"]
         nombre=request.post["nombre"]
         email=request.post["email"]
         contraseña=request.post["contraseña"] 
         telefono=request.post["telefono"]
 
-        usuario=Usuario.objects.create(nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
+        usuario=Usuario.objects.create(rut=rut, nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
         usuario.save()
         return render(request, 'web/registro.html')   
