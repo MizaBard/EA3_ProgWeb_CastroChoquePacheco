@@ -7,4 +7,5 @@ urlpatterns = [
     path('index/portafolio', portafolio, name="portafolio"),
     path('index/patreon', patreon, name="patreon"),
     path('index/registro', registro, name="registro")
+    
 ]
