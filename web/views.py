@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Usuario
 
 # Create your views here.
 
@@ -15,4 +16,16 @@ def patreon(request):
     return render(request, 'web/patreon.html')
 
 def registro(request):
-    return render(request, 'web/registro.html')
+    if request.method != "post":
+        usuario=Usuario.objects.all()
+        context={ 'usuario' : usuario }
+        return render(request, 'web/registro.html') 
+    else: 
+        nombre=request.post["nombre"]
+        email=request.post["email"]
+        contraseña=request.post["contraseña"] 
+        telefono=request.post["telefono"]
+
+        usuario=Usuario.objects.create(nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
+        usuario.save()
+        return render(request, 'web/registro.html')   

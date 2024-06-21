@@ -51,8 +51,8 @@
     </header>
 
     <!-- Inicio Formulario-->
-    <form class="container" 
-        action="#" id="registrationForm">
+    <form class="container" action="{% url 'registro' %}" method="post" 
+        action="#" id="registrationForm"> {% csrf_token %}
         <br>
         <div class="title"><h2>Formulario de Registro</h2></div>
         <br>
@@ -74,7 +74,7 @@
         <br>
         <div class="container_box">    
             <label for="password">Contraseña:</label><br>
-            <input type="password" id="password" name="password"><br><br>
+            <input type="password" id="password" name="contraseña"><br><br>
         </div>
         <br>
         <div class="container_box">
@@ -115,7 +115,7 @@
         </div><!--cierre de la division  -->
     </footer> <!--cierre de seccion de footer -->
     <!-- Fin Footer -->
-    <script src="assets/JS/validacionRegistro.js"></script>
+    <script src="{% static '/JS/validacionRegistro.js' %}"></script>
     <!-- inicio de funciones de javascript para el header-->
     <script> /*apertura de javascript */
         function showSidebar(){
