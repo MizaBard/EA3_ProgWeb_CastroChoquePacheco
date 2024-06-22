@@ -30,3 +30,7 @@ def registro(request):
         usuario=Usuario.objects.create(rut=rut, nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
         usuario.save()
         return render(request, 'web/registro.html')   
+    
+def referencia(request):
+    return render(request, 'web/BrutalismoAPI.html')
+
