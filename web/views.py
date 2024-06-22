@@ -21,15 +21,15 @@ def registro(request):
         context={ 'usuario' : usuario }
         return render(request, 'web/registro.html') 
     else: 
-        rut=request.post["rut"]
-        nombre=request.post["nombre"]
-        email=request.post["email"]
-        contraseña=request.post["contraseña"] 
-        telefono=request.post["telefono"]
+        rut = request.POST.get("rut")
+        nombre = request.POST.get("nombre")
+        email = request.POST.get("email")
+        contraseña = request.POST.get("contraseña")
+        telefono = request.POST.get("telefono")
 
-        usuario=Usuario.objects.create(rut=rut, nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
+        usuario = Usuario.objects.create(rut=rut, nombre=nombre, email=email, contraseña=contraseña, telefono=telefono)
         usuario.save()
-        return render(request, 'web/registro.html')   
+        return render(request, 'web/registro.html', {'success': True})  
     
 def referencia(request):
     return render(request, 'web/BrutalismoAPI.html')

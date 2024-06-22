@@ -51,8 +51,8 @@
     </header>
 
     <!-- Inicio Formulario-->
-    <form class="container" action="{% url 'registro' %}" method="post" 
-        id="registrationForm"> {% csrf_token %}
+    <form class="container" action="{% url 'registro' %}" method="POST" id="registrationForm"> 
+        {% csrf_token %}
         <br>
         <div class="title"><h2>Formulario de Registro</h2></div>
         <br>
@@ -94,6 +94,10 @@
             <div class="container_box">            
                <button type="submit">Registrarse</button>
             </div>
+            {% if success %}
+            <p>Registro exitoso. ¡Bienvenido!</p>
+            {% endif %}
+        
     </form>
 
      <!-- Inicio Footer -->
