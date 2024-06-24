@@ -35,4 +35,4 @@ def referencia(request):
     return render(request, 'web/BrutalismoAPI.html')
 
 def login(request):
-    return render (request, 'web/login.html')
+    return render (request, 'registration/login.html')
