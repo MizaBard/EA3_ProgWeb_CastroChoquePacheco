@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, info, portafolio, patreon, registro, referencia
+from .views import index, info, portafolio, patreon, registro, referencia, login
 
 urlpatterns = [
     path('index', index, name="index"),
@@ -7,5 +7,6 @@ urlpatterns = [
     path('index/portafolio', portafolio, name="portafolio"),
     path('index/patreon', patreon, name="patreon"),
     path('index/registro', registro, name="registro"),
-    path('index/referencia', referencia, name="referencia")
+    path('index/referencia', referencia, name="referencia"),
+    path('index/login', login, name="login")
 ]

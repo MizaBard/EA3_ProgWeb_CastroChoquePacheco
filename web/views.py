@@ -16,7 +16,7 @@ def patreon(request):
     return render(request, 'web/patreon.html')
 
 def registro(request):
-    if request.method != "post":
+    if request.method != "POST":
         usuario=Usuario.objects.all()
         context={ 'usuario' : usuario }
         return render(request, 'web/registro.html') 
@@ -34,3 +34,5 @@ def registro(request):
 def referencia(request):
     return render(request, 'web/BrutalismoAPI.html')
 
+def login(request):
+    return render (request, 'web/login.html')
